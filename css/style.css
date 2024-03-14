@@ -1,0 +1,42 @@
+*{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+.cell{
+
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    cursor: pointer;
+}
+.easy-difficulty{
+    width: calc(100% / 10);
+}
+.medium-difficulty{
+    width: calc(100% / 9);
+}
+.hard-difficulty{
+    width: calc(100% / 7);
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+.campionato-container{
+    width: 785px;
+    aspect-ratio: 1/1;
+    max-width: 100%;
+}
+.bg-acquamarine{
+    background-color: #7FFFD4;
+}
+.bg-darkacquamarine{
+    background-color: #013D3D;
+}
+.white{
+    color: white;
+}
