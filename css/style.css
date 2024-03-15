@@ -12,6 +12,9 @@
     border: 1px solid;
     cursor: pointer;
 }
+.cursor-none{
+    cursor: none;
+}
 .easy-difficulty{
     width: calc(100% / 10);
 }

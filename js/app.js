@@ -1,8 +1,5 @@
 /* riportale le classi e gli id ceh mi servono */
 const gridElement = document.querySelector('.grid');
-const easy = document.querySelector('.easy')
-const medium = document.querySelector('.medium')
-const hard = document.querySelector('.hard')
 const playbut = document.getElementById('play')
 const difficulty = document.getElementById('difficulty')
 
@@ -11,14 +8,13 @@ startgame()
 
 /* assegno al tasto play la funzione di creare la tabella con il determinato livello di difficoltà selezionato  */
 playbut.addEventListener('click', startgame) 
-function startgame() {
+function startgame(bombe, clickedcells) {
+	const clickedcell = []
 	/* settare i valori alle costanti */
-	const easyvalue = easy.value
-	const mediumvalue = medium.value
-	const hardvalue = hard.value
-	const difficultyvalue = difficulty.value
+	const difficultyvalue = difficulty.value;
 	/* se la difficoltà è impostata su easy allora ricarica la tabella con i seguenti valori */
-	if (difficultyvalue === easyvalue) {
+	if (difficultyvalue === 'Easy') {
+		gridElement.innerHTML = '';
 		/* do il valore alle mie costanti per creare i quadratini della tabella */
 		const stringNum = 10;
 		const Numsquares = stringNum ** 2;
@@ -32,15 +28,23 @@ function startgame() {
 			cellElement.classList.add('easy-difficulty');
 			
 			cellElement.addEventListener('click', function () {
+
 				cellElement.classList.add('bg-darkacquamarine', 'white');
-				console.log(num);
+				// console.log(num);
+				
+	            if (clickedcell.includes(num)) {
+		        return
+	            }
+	            clickedcell.push(num)
+	            console.log(clickedcell)
 			})
-			
 			gridElement.append(cellElement);
 		}
+		
 	}
 	/* se la difficoltà è impostata su medium allora ricarica la tabella con i seguenti valori */
-	else if (difficultyvalue === mediumvalue) {
+	else if (difficultyvalue === 'Medium') {
+		gridElement.innerHTML = '';
 		/* do il valore alle mie costanti per creare i quadratini della tabella */
 		const stringNum = 9;
 		const Numsquares = stringNum ** 2;
@@ -56,14 +60,21 @@ function startgame() {
 
 			cellElement.addEventListener('click', function () {
 				cellElement.classList.add('bg-darkacquamarine', 'white');
-				console.log(num);
+				// console.log(num);
+				
+	            if (clickedcell.includes(num)) {
+		        return
+	            }
+	            clickedcell.push(num)
+	            console.log(clickedcell)
 			});
 
 			gridElement.append(cellElement);
 		}
 	}
 	/* se la difficoltà è impostata su hard allora ricarica la tabella con i seguenti valori */
-	else if (difficultyvalue === hardvalue) {
+	else if (difficultyvalue === 'Hard') {
+		gridElement.innerHTML = '';
 		/* do il valore alle mie costanti per creare i quadratini della tabella */
 		const stringNum = 7;
 		const Numsquares = stringNum ** 2;
@@ -77,14 +88,24 @@ function startgame() {
 			cellElement.classList.add('hard-difficulty');
 
 			cellElement.addEventListener('click', function () {
+
+
 				cellElement.classList.add('bg-darkacquamarine', 'white');
-				console.log(num);
+				// console.log(num);
+				
+	            if (clickedcell.includes(num)) {
+		        return
+	            }
+	            clickedcell.push(num)
+	            console.log(clickedcell)
 			})
 
 			gridElement.append(cellElement);
 		}
 	}
 }
+
+
 
 
 
